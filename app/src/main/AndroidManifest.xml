@@ -17,8 +17,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".LoginActivity" android:screenOrientation="nosensor"></activity>
+        <activity android:name=".RegisterActivity" android:screenOrientation="nosensor"></activity>
+        <activity android:name=".Register_emerActivity" android:screenOrientation="nosensor"></activity>
+        <activity android:name=".ForgetPwActivity" android:screenOrientation="nosensor"></activity>
+        <activity android:name=".ChangePwActivity" android:screenOrientation="nosensor"></activity>
     </application>
 
 </manifest>

@@ -44,6 +44,8 @@
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:layout_marginStart="10dp"
+            android:id="@+id/emer_emailEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -64,6 +66,8 @@
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:layout_marginStart="10dp"
+            android:id="@+id/emer_phoneEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
