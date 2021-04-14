@@ -121,7 +121,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 //try {
                                     //sleep(2000);//2秒 模拟登录时间
                                     String user_email = userEmail;
-                                    Intent intent_login = new Intent(LoginActivity.this, MainActivity.class);//设置自己跳转到成功的界面
+                                    Intent intent_login = new Intent(LoginActivity.this, HomePageActivity.class);//设置自己跳转到成功的界面
 
                                     intent_login.putExtra("user_email",user_email);
                                     startActivity(intent_login);
