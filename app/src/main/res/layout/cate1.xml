@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/rectangle_cate"
-        android:drawableLeft="@drawable/gp_doctor"
+        android:drawableLeft="@drawable/gp_icon"
         android:text="  Doctor/GP"
         android:textAlignment="textStart"
         android:textSize="30dp"

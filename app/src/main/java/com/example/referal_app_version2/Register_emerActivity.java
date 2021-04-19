@@ -40,10 +40,7 @@ public class Register_emerActivity extends AppCompatActivity implements View.OnC
 
         Button btn_register_2 = findViewById(R.id.finishButton);
         Button go_back = findViewById(R.id.back);
-        /**
-         * 注册页面能点击的就三个地方
-         * top处返回箭头、刷新验证码图片、注册按钮
-         */
+
         go_back.setOnClickListener(this);
         btn_register_2.setOnClickListener(this);
     }
@@ -51,20 +48,14 @@ public class Register_emerActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.back://返回登录界面
-                Intent intent = new Intent(Register_emerActivity.this, RegisterActivity.class);
-                startActivity(intent);
+            case R.id.back:
                 finish();
                 break;
-            case R.id.finishButton://注册按钮
-                //获取用户输入的用户名、密码、验证码
+            case R.id.finishButton:
                 String emergency_email = emer_email.getText().toString().trim();
                 String emergency_phone = emer_phone.getText().toString().trim();
-                //注册验证
+                //registration check
                 if (!TextUtils.isEmpty(emergency_email) && !TextUtils.isEmpty(emergency_phone)) {
-                    //判断两次密码是否一致
-
-                    //将用户名和密码加入到数据库中
                     myDm.update_eme(email,emergency_email,emergency_phone);
                     Intent intent_regFinish = new Intent(Register_emerActivity.this, LoginActivity.class);
                     startActivity(intent_regFinish);

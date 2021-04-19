@@ -1,8 +1,6 @@
 package com.example.referal_app_version2;
 
-/**
- * Created by kizai 2020/05/19
- */
+
 public class User {
     private String email;
     private String name;

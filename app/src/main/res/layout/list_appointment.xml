@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/bt_add"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/add_plan"
+        app:layout_constraintBottom_toTopOf="@+id/appt_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ListView
+        android:id="@+id/appt_list"
+        android:layout_width="387dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/toolBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_add"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/toolBar"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="29dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appt_list"
+        tools:ignore="MissingConstraints,UnknownId">
+
+
+        <Button
+            android:id="@+id/barMain"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="38.6px"
+            android:layout_marginRight="38.6px"
+            android:layout_weight="1"
+            android:background="@drawable/home_small_button" />
+
+        <Button
+            android:id="@+id/barCate"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="38.6px"
+            android:layout_marginRight="38.6px"
+            android:layout_weight="1"
+            android:background="@drawable/cate_small_button" />
+
+        <Button
+            android:id="@+id/barReminder"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="38.6px"
+            android:layout_marginRight="38.6px"
+            android:layout_weight="1"
+            android:background="@drawable/reminder_small_button" />
+
+        <Button
+            android:id="@+id/barProfile"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="38.6px"
+            android:layout_marginRight="38.6px"
+            android:layout_weight="1"
+            android:background="@drawable/profile_small_button" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

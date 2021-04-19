@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 public class ChangePwActivity extends AppCompatActivity implements View.OnClickListener {
     DatabaseManager myDm;
     private EditText new_pw, confirm_pw;
@@ -72,25 +73,9 @@ public class ChangePwActivity extends AppCompatActivity implements View.OnClickL
                         if (new_pass.equals(confirm_pass)) {
                             myDm.update_pw(userEmail,new_pass);
                             Toast.makeText(this, "Password Changed Successfully", Toast.LENGTH_SHORT).show();
-                        //Runnable target;
-                        //用线程启动
-                        //Thread thread = new Thread(){
-                        //@Override
-                        //public void run(){
-                        //try {
-                        //sleep(2000);//2秒 模拟登录时间
-                        //String user_email = userEmail;
                             Intent intent_login = new Intent(ChangePwActivity.this, LoginActivity.class);//设置自己跳转到成功的界面
-
-                        //intent_login.putExtra("user_email", user_email);
                             startActivity(intent_login);
                             finish();
-                        //}catch (Exception e){
-                        //  e.printStackTrace();
-                        // }
-                        // }
-                        // };
-                        // thread.start();//打开线程
                         } else {
                             Toast.makeText(this, "Password not match", Toast.LENGTH_SHORT).show();
                         }

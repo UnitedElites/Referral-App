@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
         private EditText user_name, user_email, user_age, user_gender, user_password;
         private DatabaseManager myDm;
@@ -39,10 +41,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         Button btn_register = findViewById(R.id.nextButton);
         Button go_back = findViewById(R.id.back);
-        /**
-         * 注册页面能点击的就三个地方
-         * top处返回箭头、刷新验证码图片、注册按钮
-         */
+
         go_back.setOnClickListener(this);
         btn_register.setOnClickListener(this);
     }
@@ -50,33 +49,41 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.back://返回登录界面
+            case R.id.back:
                 Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
                 break;
-            case R.id.nextButton://注册按钮
-                //获取用户输入的用户名、密码、验证码
+            case R.id.nextButton:
                 String username = user_name.getText().toString().trim();
                 String password = user_password.getText().toString().trim();
                 String email = user_email.getText().toString().trim();
                 String age = user_age.getText().toString().trim();
                 String gender = user_gender.getText().toString().trim();
-                //注册验证
+                //registration check
                 if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(age) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(gender)) {
-                    //判断两次密码是否一致
+                    boolean flag = false;
+                    ArrayList<User> data = myDm.getAllData();
+                    for (int i = 0; i < data.size(); i++) {
+                        User user = data.get(i);
+                        if ((email.equals(user.getEmail()) )) {
+                            flag = true;
+                        }
+                    }
 
-                        //将用户名和密码加入到数据库中
+                    if(flag == false){
                         myDm.add_1(username,email, age, gender,password);
                         Intent intent1 = new Intent(RegisterActivity.this, Register_emerActivity.class);
                         intent1.putExtra("email",email);
                         startActivity(intent1);
-                        finish();
+                    }
+                    else{
+                        Toast.makeText(this, "Email Exists", Toast.LENGTH_SHORT).show();
+                    }
 
+                }else{
+                    Toast.makeText(this, "Please Enter All Fields", Toast.LENGTH_SHORT).show();
                 }
-                //else {
-                    //Toast.makeText(this, "注册信息不完善,注册失败", Toast.LENGTH_SHORT).show();
-                //}
                 break;
         }
     }

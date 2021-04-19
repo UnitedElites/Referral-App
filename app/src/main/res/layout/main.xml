@@ -95,7 +95,7 @@
             android:background="@drawable/home_small_button" />
 
         <Button
-            android:id="@+id/batCate"
+            android:id="@+id/barCate"
             android:layout_width="25dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="38.6px"

@@ -113,25 +113,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             remember_login.setChecked(true);
                         }
                         Toast.makeText(this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                        //Runnable target;
-                        //用线程启动
-                        //Thread thread = new Thread(){
-                            //@Override
-                            //public void run(){
-                                //try {
-                                    //sleep(2000);//2秒 模拟登录时间
-                                    String user_email = userEmail;
-                                    Intent intent_login = new Intent(LoginActivity.this, MainActivity.class);//设置自己跳转到成功的界面
 
-                                    intent_login.putExtra("user_email",user_email);
+                                    String user_email = userEmail;
+                                    Intent intent_login = new Intent(LoginActivity.this, HomePageActivity.class);
+                                    myDm.savelogin(user_email);
                                     startActivity(intent_login);
+                                    MainActivity.test.finish();
                                     finish();
-                                //}catch (Exception e){
-                                  //  e.printStackTrace();
-                               // }
-                           // }
-                       // };
-                       // thread.start();//打开线程
+
                     } else {
                         Toast.makeText(this, "Wrong password", Toast.LENGTH_SHORT).show();
                     }
@@ -141,7 +130,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.forgetbutton:
-                Intent intent_forgot = new Intent(LoginActivity.this, ForgetPwActivity.class);//跳转到注册界面
+                Intent intent_forgot = new Intent(LoginActivity.this, ForgetPwActivity.class);
                 startActivity(intent_forgot);
                 finish();
                 break;
